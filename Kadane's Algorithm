@@ -1,0 +1,40 @@
+Given an integer array arr[]. Find the contiguous sub-array(containing at least one number) that has the maximum sum and return its sum.
+
+Examples:
+
+Input: arr[] = [1, 2, 3, -2, 5]
+Output: 9
+Explanation: Max subarray sum is 9 of elements (1, 2, 3, -2, 5) which is a contiguous subarray.
+Input: arr[] = [-1, -2, -3, -4]
+Output: -1
+Explanation: Max subarray sum is -1 of element (-1)
+
+
+CODE: 
+
+class Solution {
+
+    // arr: input array
+    // Function to find the sum of contiguous subarray with maximum sum.
+    long maxSubarraySum(int[] arr) 
+    {
+
+        // Your code here
+        
+        long sum=0; long maxi= Long.MIN_VALUE;
+        
+        for(int i=0;i<arr.length;i++)
+        {
+         sum=sum+arr[i];
+         if(sum>maxi)
+        {
+         maxi=sum;
+        }
+        if(sum<0)
+        {
+        sum=0;
+        }
+    }
+    return maxi;
+}
+}
