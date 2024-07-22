@@ -1,0 +1,30 @@
+Reverse String
+Example 1:
+
+Input: s = ["h","e","l","l","o"]
+Output: ["o","l","l","e","h"]
+
+
+import java.util.*;
+
+class Solution {
+    public void reverseString(char[] s) 
+    {
+        List<Character> list = new ArrayList<>();
+        for (char c : s) {
+            list.add(c);
+        }
+        
+        int start = 0, end = list.size() - 1;
+        while (start < end) 
+        {
+            Collections.swap(list, start, end);
+            start++;
+            end--;
+        }
+        
+        for (int i = 0; i < list.size(); i++) {
+            s[i] = list.get(i);
+        }
+    }
+}
